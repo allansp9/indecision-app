@@ -3,57 +3,46 @@ console.log("App.js is running!");
 const app = {
   title: "Indecision App",
   subtitle: "This is the subtitle",
-  options: ["one", "two"]
+  options: []
 };
 
-const template = (
-  <div>
-    <h1>{app.title}</h1>
-    {app.subtitle && <p>{app.subtitle}</p>}
-    <p>{app.options.length > 0 ? "Here are your options" : "No options"}</p>
-    <ol>
-      <li>Item one</li>
-      <li>Item two</li>
-    </ol>
-  </div>
-);
-
-let count = 0;
-
-const addOne = () => {
-  count++;
-  renderCounterApp();
+const formHandler = e => {
+  e.preventDefault();
+  const option = e.target.elements.option.value;
+  if (option) {
+    app.options.push(option);
+    e.target.reset();
+    renderForm();
+  }
 };
 
-const minusOne = () => {
-  count--;
-  renderCounterApp();
-};
-
-const reset = () => {
-  count = 0;
-  renderCounterApp();
+const removeAll = () => {
+  app.options = [];
+  renderForm();
 };
 
 const appRoot = document.getElementById("app");
 
-const renderCounterApp = () => {
-  const templateTwo = (
+const renderForm = () => {
+  const template = (
     <div>
-      <h1>Count: {count}</h1>
-      <button id="my-btn1" className="btn" onClick={addOne}>
-        +1
-      </button>
-      <button id="my-btn2" className="btn" onClick={minusOne}>
-        -1
-      </button>
-      <button id="my-btn3" className="btn" onClick={reset}>
-        reset
-      </button>
+      <h1>{app.title}</h1>
+      {app.subtitle && <p>{app.subtitle}</p>}
+      <p>{app.options.length > 0 ? "Here are your options" : "No options"}</p>
+      <p>{app.options.length}</p>
+      <button onClick={removeAll}>Remove All</button>
+      <ol>
+        <li>Item one</li>
+        <li>Item two</li>
+      </ol>
+      <form onSubmit={formHandler}>
+        <input type="text" name="option" />
+        <button>Add Option</button>
+      </form>
     </div>
   );
 
-  ReactDOM.render(templateTwo, appRoot);
+  ReactDOM.render(template, appRoot);
 };
 
-renderCounterApp();
+renderForm();
