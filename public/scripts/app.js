@@ -150,7 +150,7 @@ var IndecisionApp = function (_React$Component2) {
     var _this2 = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
 
     _this2.state = {
-      options: props.options
+      options: []
     };
 
     _this2.handleDeleteOptions = _this2.handleDeleteOptions.bind(_this2);
@@ -253,9 +253,5 @@ var IndecisionApp = function (_React$Component2) {
 
   return IndecisionApp;
 }(React.Component);
-
-IndecisionApp.defaultProps = {
-  options: []
-};
 
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById("app"));
