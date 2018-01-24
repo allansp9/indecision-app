@@ -60,41 +60,16 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/******/ ({
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(2);
-// import "./utils";
-// import subtract, { square, add } from "./utils";
+/***/ 16:
+/***/ (function(module, exports) {
 
-
-// console.log(subtract(100, 81));
-console.log(Object(__WEBPACK_IMPORTED_MODULE_0__person__["c" /* isAdult */])(18));
-console.log(Object(__WEBPACK_IMPORTED_MODULE_0__person__["a" /* canDrink */])(20));
-console.log(Object(__WEBPACK_IMPORTED_MODULE_0__person__["b" /* default */])(65));
-
-
-/***/ }),
-/* 1 */,
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-const isAdult = a => a >= 18;
-/* harmony export (immutable) */ __webpack_exports__["c"] = isAdult;
-
-const canDrink = a => a >= 21;
-/* harmony export (immutable) */ __webpack_exports__["a"] = canDrink;
-
-
-/* harmony default export */ __webpack_exports__["b"] = (age => age >= 65);
-
+throw new Error("Module parse failed: Unexpected token (4:17)\nYou may need an appropriate loader to handle this file type.\n| import ReactDOM from \"react-dom\";\r\n| \r\n| const template = <p>testing 123</p>;\r\n| \r\n| ReactDOM.render(template, document.getElementById(\"app\"));\r");
 
 /***/ })
-/******/ ]);
+
+/******/ });
